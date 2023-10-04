@@ -9,12 +9,14 @@ const Home = () => {
   return (
     <Flex
       alignItems="center"
+      flexDirection={['column-reverse', 'column-reverse', 'row']}
       gap={8}
-      h="100vh"
       justifyContent="center"
+      minH="100vh"
+      p={4}
       w="100vw"
     >
-      <Box h="fit-content" w="400px">
+      <Box h="fit-content" maxW="400px" w="100%">
         <DynamicForm
           fields={[
             createFormElement('input', {
@@ -53,13 +55,13 @@ const Home = () => {
           ]}
           onSubmit={onSubmit}
           submit={
-            <Button colorScheme="teal" type="submit">
+            <Button colorScheme="orange" type="submit">
               Submit
             </Button>
           }
         />
       </Box>
-      <Box w="400px">
+      <Box maxW="400px" w="100%">
         <PrettyJson data={formData} />
       </Box>
     </Flex>
