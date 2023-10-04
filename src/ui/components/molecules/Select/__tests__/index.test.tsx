@@ -4,8 +4,8 @@ import { Select } from '..'
 
 describe('Select', () => {
   it('Should render a select correctly', () => {
-    renderWithProviders(<Select label="Select" name="name" />)
-    const inputElement = screen.getByLabelText('Name')
+    renderWithProviders(<Select label="Select" name="select" />)
+    const inputElement = screen.getByLabelText('Select')
     expect(inputElement).toBeInTheDocument()
   })
 })
