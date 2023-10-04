@@ -1,5 +1,9 @@
-import { Button, Flex, Select } from '@chakra-ui/react'
-import { type FieldsTypes, type DynamicFormProps } from './types'
+import { Flex, Select } from '@chakra-ui/react'
+import {
+  type FieldsTypes,
+  type DynamicFormProps,
+  type FieldsMapProps
+} from './types'
 import { createElement, type ComponentType } from 'react'
 import { Input } from 'ui/components/molecules'
 
@@ -11,20 +15,18 @@ const fieldByType: {
   select: Select
 }
 
-const Items = ({ components }: DynamicFormProps) =>
-  components.map(({ type, props }) => {
+const FieldsMap = ({ fields }: FieldsMapProps) =>
+  fields.map(({ type, props }) => {
     const Field = fieldByType[type]
     return createElement(Field, props)
   })
 
-export const DynamicForm = ({ components }: DynamicFormProps) => {
+export const DynamicForm = ({ fields, submit }: DynamicFormProps) => {
   return (
     <Flex justifyContent="center" mt="8" width="100vw">
       <Flex as="form" flexDir="column" gap={4} w="400px">
-        <Items components={components} />
-        <Button colorScheme="blue" type="submit">
-          Submit
-        </Button>
+        <FieldsMap fields={fields} />
+        {submit}
       </Flex>
     </Flex>
   )
