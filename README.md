@@ -2,12 +2,8 @@
 
 A flexible and type-safe dynamic form generator built with React and TypeScript.
 
-## 📚 Table of Contents
+[screen-capture.webm](https://github.com/tjuandev/dynamic-form/assets/67200208/db4bcca5-2fae-4308-9de5-e94093b93967)
 
-- [Features](#🌟-features)
-- [Installation](#📦-installation)
-- [Important Commands](#🏃-important-commands)
-- [Usage](#🚀-usage)
 
 ## 🌟 Features
 
