@@ -5,7 +5,7 @@ export const Input = ({ label, ...inputProps }: InputProps) => {
   return (
     <FormControl>
       <FormLabel>{label}</FormLabel>
-      <ChakraInput type="email" {...inputProps} />
+      <ChakraInput {...inputProps} />
     </FormControl>
   )
 }
