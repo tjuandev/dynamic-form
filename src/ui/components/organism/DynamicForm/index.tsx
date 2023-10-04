@@ -19,13 +19,13 @@ const fieldByType: {
 const FieldsMap = ({ fields }: FieldsMapProps) =>
   fields.map(({ type, props }) => {
     const Field = fieldByType[type]
-    return createElement(Field, props)
+    return createElement(Field, { key: props.name, ...props })
   })
 
-export const DynamicForm = ({ fields, submit }: DynamicFormProps) => {
+export const DynamicForm = ({ fields, submit, onSubmit }: DynamicFormProps) => {
   return (
     <Flex justifyContent="center" mt="8" width="100vw">
-      <Flex as="form" flexDir="column" gap={4} w="400px">
+      <Flex as="form" flexDir="column" gap={4} onSubmit={onSubmit} w="400px">
         <FieldsMap fields={fields} />
         {submit}
       </Flex>

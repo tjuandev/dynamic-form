@@ -15,6 +15,7 @@ export type FormField<Field extends FieldsTypes> = {
 
 export interface DynamicFormProps {
   fields: Array<FormField<FieldsTypes>>
+  onSubmit: () => void
   submit: ReactNode
 }
 
