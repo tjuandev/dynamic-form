@@ -4,6 +4,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useDynamicFormState } from 'store/dynamicForm'
 
 const formSchema = z.object({
+  name: z
+    .string({
+      required_error: 'Name is required'
+    })
+    .nonempty(),
+  // eslint-disable-next-line sort-keys-fix/sort-keys-fix
   age: z
     .string({
       required_error: 'Age is required'
@@ -14,11 +20,6 @@ const formSchema = z.object({
   gender: z
     .string({
       required_error: 'Gender is required'
-    })
-    .nonempty(),
-  name: z
-    .string({
-      required_error: 'Name is required'
     })
     .nonempty()
 })
