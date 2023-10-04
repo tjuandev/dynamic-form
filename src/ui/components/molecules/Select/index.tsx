@@ -1,15 +1,16 @@
 import {
   FormControl,
   FormLabel,
-  Select as ChakraSelect
+  Select as ChakraSelect,
+  FormErrorMessage
 } from '@chakra-ui/react'
 import { type SelectProps } from './types'
 import { forwardRef } from 'react'
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({ label, options, ...selectProps }, ref) => {
+  ({ label, options, error, ...selectProps }, ref) => {
     return (
-      <FormControl>
+      <FormControl isInvalid={!!error}>
         <FormLabel>{label}</FormLabel>
         <ChakraSelect {...selectProps} ref={ref}>
           {options?.map(({ label, value }) => (
@@ -18,6 +19,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             </option>
           ))}
         </ChakraSelect>
+        <FormErrorMessage>{error}</FormErrorMessage>
       </FormControl>
     )
   }

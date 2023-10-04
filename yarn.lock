@@ -3336,6 +3336,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "@hookform/resolvers@npm:3.3.1"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: 1ddc250a8d6769fb11b03110b586677b03463276dda1cdfd0225ab94f46d422868f74b01bef85f785010cc3d836f0669d6b6c0ed752cae532d2badf3537b1e72
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.11":
   version: 0.11.11
   resolution: "@humanwhocodes/config-array@npm:0.11.11"
@@ -14302,6 +14311,7 @@ __metadata:
     "@commitlint/config-conventional": 17.6.5
     "@emotion/react": ^11.11.1
     "@emotion/styled": ^11.11.0
+    "@hookform/resolvers": ^3.3.1
     "@storybook/addon-a11y": ^7.4.5
     "@storybook/addon-essentials": ^7.4.5
     "@storybook/addon-links": ^7.4.5
@@ -14362,6 +14372,7 @@ __metadata:
     vite-plugin-svgr: ^4.1.0
     vite-tsconfig-paths: ^4.2.1
     vitest: ^0.34.6
+    zod: ^3.22.3
   languageName: unknown
   linkType: soft
 
@@ -16614,5 +16625,12 @@ __metadata:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 2cac84540f65c64ccc1683c267edce396b26b1e931aa429660aefac8fbe0188167b7aee815a3c22fa59a28a58d898d1a2b1825048f834d8d629f4c2a5d443801
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.3":
+  version: 3.22.3
+  resolution: "zod@npm:3.22.3"
+  checksum: 65b05139be337078a70700b05942ab7f2ef5f11abe194df14ef257fac4e5c383476a4dc290731842996bd57fc8d5bf38e5a4c907fe8cdf8b15477f8da5bfcc00
   languageName: node
   linkType: hard

@@ -8,4 +8,12 @@ describe('Input', () => {
     const inputElement = screen.getByLabelText('Name')
     expect(inputElement).toBeInTheDocument()
   })
+
+  it('Should render an error message correctly', () => {
+    renderWithProviders(
+      <Input error="This is an error" label="Name" name="name" type="email" />
+    )
+    const errorMessage = screen.getByText('This is an error')
+    expect(errorMessage).toBeInTheDocument()
+  })
 })
