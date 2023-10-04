@@ -5,7 +5,9 @@ import { Select } from '..'
 describe('Select', () => {
   it('Should render a select correctly', () => {
     renderWithProviders(<Select label="Select" name="select" />)
-    const inputElement = screen.getByLabelText('Select')
-    expect(inputElement).toBeInTheDocument()
+    const selectInput = screen.getByRole('combobox', {
+      name: /select/i
+    })
+    expect(selectInput).toBeInTheDocument()
   })
 })
