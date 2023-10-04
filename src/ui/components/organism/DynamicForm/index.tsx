@@ -1,34 +1,33 @@
-import { Button, Flex } from "@chakra-ui/react";
-import { Input } from "../../molecules";
-import { DynamicFormProps } from "./types";
+import { Button, Flex, Select } from '@chakra-ui/react'
+import { type FieldsTypes, type DynamicFormProps } from './types'
+import { createElement, type ComponentType } from 'react'
+import { Input } from 'ui/components/molecules'
 
-const pickComponent = (type: "input") => {
-  switch (type) {
-    case "input":
-      return Input;
-    default:
-      return Input;
-  }
-};
+// NOTE "Any" is used here because to pass component props you should use createFormElement function so you can't pass wrong props
+const fieldByType: {
+  [key in FieldsTypes]: ComponentType<any>
+} = {
+  input: Input,
+  select: Select
+}
 
 const Items = ({ components }: DynamicFormProps) =>
-  components.map(({ type, label }) => {
-    const Component = pickComponent(type);
-    return <Component label={label} />;
-  });
+  components.map(({ type, props }) => {
+    const Field = fieldByType[type]
+    return createElement(Field, props)
+  })
 
 export const DynamicForm = ({ components }: DynamicFormProps) => {
   return (
-    <Flex width="100vw" justifyContent="center" mt="8">
-      <Flex
-        as="form"
-        flexDir="column"
-        gap={4}
-        w="400px"
-      >
+    <Flex justifyContent="center" mt="8" width="100vw">
+      <Flex as="form" flexDir="column" gap={4} w="400px">
         <Items components={components} />
-        <Button type="submit" colorScheme="blue">Submit</Button>
+        <Button colorScheme="blue" type="submit">
+          Submit
+        </Button>
       </Flex>
     </Flex>
-  );
-};
+  )
+}
+
+export * from './createFormElement'
