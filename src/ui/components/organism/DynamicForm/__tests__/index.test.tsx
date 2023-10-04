@@ -13,6 +13,7 @@ describe('Dynamic Form', () => {
             placeholder: 'Enter your name'
           })
         ]}
+        onSubmit={() => {}}
         submit={<button type="submit">Submit</button>}
       />
     )
@@ -36,6 +37,7 @@ describe('Dynamic Form', () => {
             placeholder: 'Select an option'
           })
         ]}
+        onSubmit={() => {}}
         submit={<button type="submit">Submit</button>}
       />
     )
