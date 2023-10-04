@@ -1,11 +1,12 @@
-import { Flex, Select } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import {
   type FieldsTypes,
   type DynamicFormProps,
   type FieldsMapProps
 } from './types'
 import { createElement, type ComponentType } from 'react'
-import { Input } from 'ui/components/molecules'
+
+import { Input, Select } from 'ui/components/molecules'
 
 // NOTE "Any" is used here because to pass component props you should use createFormElement function so you can't pass wrong props
 const fieldByType: {

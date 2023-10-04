@@ -7,7 +7,19 @@ const Home = () => {
       fields={[
         createFormElement('input', {
           label: 'Name',
+          name: 'name',
           placeholder: 'Enter your name'
+        }),
+        createFormElement('select', {
+          label: 'Select',
+          name: 'select',
+          options: [
+            {
+              label: 'Option 1',
+              value: 'option1'
+            }
+          ],
+          placeholder: 'Select an option'
         })
       ]}
       submit={

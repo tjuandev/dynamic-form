@@ -1,6 +1,6 @@
-import { type SelectProps } from '@chakra-ui/react'
 import { type ReactNode } from 'react'
 import { type InputProps } from 'ui/components/molecules/Input/types'
+import { type SelectProps } from 'ui/components/molecules/Select/types'
 
 export type FieldsTypes = 'input' | 'select'
 

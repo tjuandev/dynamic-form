@@ -9,6 +9,7 @@ describe('Dynamic Form', () => {
         fields={[
           createFormElement('input', {
             label: 'Name',
+            name: 'name',
             placeholder: 'Enter your name'
           })
         ]}
