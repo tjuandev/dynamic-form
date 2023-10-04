@@ -1,5 +1,5 @@
-import { FormControl, FormLabel, Input as ChakraInput } from "@chakra-ui/react";
-import { InputProps } from "./types";
+import { FormControl, FormLabel, Input as ChakraInput } from '@chakra-ui/react'
+import { type InputProps } from './types'
 
 export const Input = ({ label, ...inputProps }: InputProps) => {
   return (
@@ -7,5 +7,5 @@ export const Input = ({ label, ...inputProps }: InputProps) => {
       <FormLabel>{label}</FormLabel>
       <ChakraInput type="email" {...inputProps} />
     </FormControl>
-  );
-};
+  )
+}
